@@ -1,3 +1,0 @@
-# semi 
-
-Prueba de archivos

@@ -78,7 +78,7 @@ echo 'snappy -f / -r $SNAPSHOT -t orig-fs' >> odyssey-device-deploy.sh
 echo 'fi' >> odyssey-device-deploy.sh
 echo '/usr/libexec/firmware' >> odyssey-device-deploy.sh
 echo 'mkdir -p /var/mobile/Library/Application Support/xyz.willy.Zebra/' >> odyssey-device-deploy.sh
-echo 'echo "deb https://repo.theodyssey.dev/ ./" > /var/mobile/Library/Application Support/xyz.willy.Zebra/sources.list' >> odyssey-device-deploy.sh
+echo 'echo "deb https://jostynp100.github.io/Checkcursus/ ./" > /var/mobile/Library/Application Support/xyz.willy.Zebra/sources.list' >> odyssey-device-deploy.sh
 echo 'echo "" >> /var/mobile/Library/Application Support/xyz.willy.Zebra/sources.list' >> odyssey-device-deploy.sh
 echo 'mkdir -p /etc/apt/preferences.d/' >> odyssey-device-deploy.sh
 echo 'echo "Package: *" > /etc/apt/preferences.d/odyssey' >> odyssey-device-deploy.sh

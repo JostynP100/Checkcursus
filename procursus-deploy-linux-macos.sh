@@ -101,12 +101,12 @@ echo 'rm org.swift.libswift_5.0-electra2_iphoneos-arm.deb' >> odyssey-device-dep
 echo 'rm odyssey-device-deploy.sh' >> odyssey-device-deploy.sh
 
 echo "Downloading Resources..."
-curl -L -O https://github.com/coolstar/odyssey-bootstrap/raw/master/bootstrap_1500.tar.gz -O https://github.com/coolstar/odyssey-bootstrap/raw/master/bootstrap_1600.tar.gz -O https://github.com/coolstar/odyssey-bootstrap/raw/master/bootstrap_1700.tar.gz -O https://github.com/coolstar/odyssey-bootstrap/raw/master/migration -O https://github.com/coolstar/odyssey-bootstrap/raw/master/org.coolstar.sileo_2.0.0b6_iphoneos-arm.deb -O https://github.com/coolstar/odyssey-bootstrap/raw/master/org.swift.libswift_5.0-electra2_iphoneos-arm.deb
+curl -L -O https://github.com/JostynP100/Zebra-Procursus/raw/master/bootstrap_1500.tar.gz -O https://github.com/JostynP100/Zebra-Procursus/raw/master/bootstrap_1600.tar.gz -O https://github.com/JostynP100/Zebra-Procursus/raw/master/bootstrap_1700.tar.gz -O https://github.com/JostynP100/Zebra-Procursus/raw/master/migration -O https://github.com/JostynP100/Zebra-Procursus/raw/master/xyz.willy.zebra_1.1.13_iphoneos-arm.deb -O https://github.com/coolstar/odyssey-bootstrap/raw/master/org.swift.libswift_5.0-electra2_iphoneos-arm.deb
 clear
 if [[ ! "${ARM}" = yes ]]; then
 	echo "Copying Files to your device"
 	echo "Default password is: alpine"
-	scp -P4444 -o "StrictHostKeyChecking no" -o "UserKnownHostsFile=/dev/null" bootstrap_1500.tar.gz bootstrap_1600.tar.gz bootstrap_1700.tar.gz migration org.coolstar.sileo_2.0.0b6_iphoneos-arm.deb org.swift.libswift_5.0-electra2_iphoneos-arm.deb odyssey-device-deploy.sh root@127.0.0.1:/var/root/
+	scp -P4444 -o "StrictHostKeyChecking no" -o "UserKnownHostsFile=/dev/null" bootstrap_1500.tar.gz bootstrap_1600.tar.gz bootstrap_1700.tar.gz migration xyz.willy.zebra_1.1.13_iphoneos-arm.deb org.swift.libswift_5.0-electra2_iphoneos-arm.deb odyssey-device-deploy.sh root@127.0.0.1:/var/root/
 	clear
 fi
 echo "Installing Procursus bootstrap and Sileo on your device"

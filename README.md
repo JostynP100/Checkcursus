@@ -7,5 +7,5 @@ Usbmuxd = [brew install usbmuxd] -> Mac
 
 Usbmuxd = [sudo apt-get install usbmuxd] -> Linux
 
-Script = [/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/JostynP100/Zebra-Procursus/master/checkcursus-procursus-deploy-linux-macos.sh)"] -> Mac/Linux
+Script = [/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/JostynP100/Checkcursus/master/checkcursus-procursus-deploy-linux-macos.sh)"] -> Mac/Linux
 

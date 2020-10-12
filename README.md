@@ -1,7 +1,11 @@
 # Information
 Script para instalar Zebra junto al bootstrap de Procursus
-# Installation
-Usbmuxd = [sudo apt-get install usbmuxd]
+# Installation Mac/Linux
+Users Mac = [/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)”]
 
-Script = [/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/JostynP100/Zebra-Procursus/master/zebra-procursus-deploy-linux-macos.sh)"]
+Usbmuxd = [brew install usbmuxd] -> Mac
+
+Usbmuxd = [sudo apt-get install usbmuxd] -> Linux
+
+Script = [/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/JostynP100/Zebra-Procursus/master/zebra-procursus-deploy-linux-macos.sh)"] -> Mac/Linux
 

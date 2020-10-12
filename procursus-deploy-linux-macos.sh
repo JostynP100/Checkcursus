@@ -109,7 +109,7 @@ if [[ ! "${ARM}" = yes ]]; then
 	scp -P4444 -o "StrictHostKeyChecking no" -o "UserKnownHostsFile=/dev/null" bootstrap_1500.tar.gz bootstrap_1600.tar.gz bootstrap_1700.tar.gz migration xyz.willy.zebra_1.1.13_iphoneos-arm.deb org.swift.libswift_5.0-electra2_iphoneos-arm.deb odyssey-device-deploy.sh root@127.0.0.1:/var/root/
 	clear
 fi
-echo "Installing Procursus bootstrap and Sileo on your device"
+echo "Installing Procursus bootstrap and Zebra on your device"
 if [[ "${ARM}" = yes ]]; then
 	zsh ./odyssey-device-deploy.sh
 else

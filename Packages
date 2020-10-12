@@ -1,0 +1,65 @@
+Package: com.saurik.substrate.safemode
+Author: Jay Freeman (saurik) <saurik@saurik.com>
+Name: Substrate Safe Mode
+Description: safe mode safety extension (safe)
+Depiction: http://cydia.saurik.com/info/com.saurik.substrate.safemode/
+Depends: mobilesubstrate (>= 0.9.3367+38)
+Architecture: iphoneos-arm
+Maintainer: Jay Freeman (saurik) <saurik@saurik.com>
+Priority: optional
+Section: System
+Conflicts: safe-mode-fixer-ios7
+Replaces: safe-mode-fixer-ios7
+Version: 0.9.6004
+Installed-Size: 144
+Filename: debs/com.saurik.substrate.safemode_0.9.6004_iphoneos-arm.deb
+
+Package: mobilesubstrate
+Architecture: iphoneos-arm
+Name: Cydia Substrate
+Author: Jay Freeman (saurik) <saurik@saurik.com>
+Depiction: http://cydia.saurik.com/info/mobilesubstrate/
+Depends: com.saurik.substrate.safemode
+Pre-Depends: dpkg (>= 1.20.5-3)
+Breaks: uikittools (<< 1.1.1), com.mywi4 (<= 5.03.2), com.phoenix.pandoracontrols (<= 1.1.0-1), com.intelliborn.intelliscreenx (<= 1.0.110), com.evad3rs.evasi0n7 (<< 0.2)
+Replaces: cycript (<= 0.9.594), com.saurik.substrate
+Conflicts: me.devbug.msreloadfix, com.r3pwn.startsubstrate, com.ragemasta.bootstrap, com.saurik.substrate (<< 1:0)
+Priority: optional
+Version: 0.9.7111
+Description: powerful code insertion platform
+Maintainer: Jay Freeman (saurik) <saurik@saurik.com>
+Section: System
+Filename: debs/mobilesubstrate_0.9.7111_iphoneos-arm.deb
+
+Package: com.jostynp100.preferenceloader
+Name: PreferenceLoader
+Depends: mobilesubstrate
+Architecture: iphoneos-arm
+Description: load preferences in style
+Maintainer: BigBoss <bigboss@thebigboss.org>
+Author: Sam Bingner <maintainer@sbdhi.com>
+Section: System
+dev: dustinhowett
+Depiction: http://moreinfo.thebigboss.org/moreinfo/depiction.php?file=preferenceloader2Data
+Homepage: http://moreinfo.thebigboss.org/moreinfo/depiction.php?file=preferenceloader2Data
+Tag: role::hacker, purpose::library, compatible::ios7, compatible::ios8, compatible::ios9, compatible::ios10, compatible::ios11, compatible::ios12, compatible::ios13
+Version: 2.2.5
+Installed-Size: 526
+Filename: debs/preferenceloader_2.2.5.deb
+
+Package: com.jostynp100.rocketbootstrap
+Depends: mobilesubstrate (>= 0.9.5000), firmware (>= 3.0)
+Name: RocketBootstrap
+Architecture: iphoneos-arm
+Description: Support library allowing tweaks to communicate with sandboxed processes
+Depiction: https://www.rpetrich.com/cydia/rocketbootstrap/beta/
+Homepage: https://www.rpetrich.com/cydia/rocketbootstrap/beta/
+Maintainer: JostynP100 <jostyn.alexis@gmail.com>
+Author: Ryan Petrich <rpetrich+rocketbootstrap@gmail.com>
+Section: System
+dev: rpetrich
+Tag: purpose::extension, role::developer
+Version: 1.0.10~beta1
+Installed-Size: 596
+Filename: debs/com.rpetrich.rocketbootstrap_1.0.10_beta1_iphoneos-arm.deb
+

@@ -1,5 +1,5 @@
 # Information
-Script para instalar Zebra junto al bootstrap de procursus
+Script para instalar Zebra junto al bootstrap de Procursus
 # Installation
 Usbmuxd = [sudo apt-get install usbmuxd]
 

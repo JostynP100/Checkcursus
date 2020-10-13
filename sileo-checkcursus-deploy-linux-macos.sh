@@ -112,7 +112,7 @@ if [[ ! "${ARM}" = yes ]]; then
 	scp -P4444 -o "StrictHostKeyChecking no" -o "UserKnownHostsFile=/dev/null" bootstrap_1500.tar.gz bootstrap_1600.tar.gz bootstrap_1700.tar.gz migration org.coolstar.sileo_2.0.0b6_iphoneos-arm.deb org.swift.libswift_5.0-electra2_iphoneos-arm.deb checkcursus-device-deploy.sh root@127.0.0.1:/var/root/
 	clear
 fi
-echo "Installing Procursus bootstrap and Zebra on your device"
+echo "Installing Procursus bootstrap and Sileo on your device"
 if [[ "${ARM}" = yes ]]; then
 	zsh ./checkcursus-device-deploy.sh
 else

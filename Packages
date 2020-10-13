@@ -31,7 +31,7 @@ Maintainer: Jay Freeman (saurik) <saurik@saurik.com>
 Section: System
 Filename: debs/mobilesubstrate_0.9.7111_iphoneos-arm.deb
 
-Package: com.jostynp100.preferenceloader
+Package: preferenceloader
 Name: PreferenceLoader
 Depends: mobilesubstrate
 Architecture: iphoneos-arm

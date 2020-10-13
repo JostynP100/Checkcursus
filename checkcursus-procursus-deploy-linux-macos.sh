@@ -7,11 +7,11 @@ if [ $(uname) = "Darwin" ]; then
 	fi
 fi
 
-echo "odysseyra1n deployment script"
-echo "(C) 2020, CoolStar. All Rights Reserved"
+echo "Checkcursus deployment script"
+echo "(C) 2020, JostynP100"
 
 echo ""
-echo "Before you begin: This script includes experimental migration from older bootstraps to Procursus/Odyssey."
+echo "Before you begin: This script will install Procursus with Zebra on Checkra1n."
 echo "If you're already jailbroken, you can run this script on the checkra1n device."
 echo "If you'd rather start clean, please Reset System via the Loader app first."
 read -p "Press enter to continue"
@@ -33,75 +33,72 @@ else
 		exit 1
 	fi
 fi
-rm -rf odyssey-tmp
-mkdir odyssey-tmp
-cd odyssey-tmp
+rm -rf checkcursus-tmp
+mkdir checkcursus-tmp
+cd checkcursus-tmp
 
-echo '#!/bin/zsh' > odyssey-device-deploy.sh
+echo '#!/bin/zsh' > checkcursus-device-deploy.sh
 if [[ ! "${ARM}" = yes ]]; then
-	echo 'cd /var/root' >> odyssey-device-deploy.sh
+	echo 'cd /var/root' >> checkcursus-device-deploy.sh
 fi
-echo 'if [[ -f "/.bootstrapped" ]]; then' >> odyssey-device-deploy.sh
-echo 'mkdir -p /odyssey && mv migration /odyssey' >> odyssey-device-deploy.sh
-echo 'chmod 0755 /odyssey/migration' >> odyssey-device-deploy.sh
-echo '/odyssey/migration' >> odyssey-device-deploy.sh
-echo 'rm -rf /odyssey' >> odyssey-device-deploy.sh
-echo 'else' >> odyssey-device-deploy.sh
-echo 'VER=$(/binpack/usr/bin/plutil -key ProductVersion /System/Library/CoreServices/SystemVersion.plist)' >> odyssey-device-deploy.sh
-echo 'if [[ "${VER%.*}" -ge 12 ]] && [[ "${VER%.*}" -lt 13 ]]; then' >> odyssey-device-deploy.sh
-echo 'CFVER=1500' >> odyssey-device-deploy.sh
-echo 'elif [[ "${VER%.*}" -ge 13 ]]; then' >> odyssey-device-deploy.sh
-echo 'CFVER=1600' >> odyssey-device-deploy.sh
-echo 'elif [[ "${VER%.*}" -ge 14 ]]; then' >> odyssey-device-deploy.sh
-echo 'CFVER=1700' >> odyssey-device-deploy.sh
-echo 'else' >> odyssey-device-deploy.sh
-echo 'echo "${VER} not compatible."' >> odyssey-device-deploy.sh
-echo 'exit 1' >> odyssey-device-deploy.sh
-echo 'fi' >> odyssey-device-deploy.sh
-echo 'gzip -d bootstrap_${CFVER}.tar.gz' >> odyssey-device-deploy.sh
-echo 'mount -uw -o union /dev/disk0s1s1' >> odyssey-device-deploy.sh
-echo 'rm -rf /etc/profile' >> odyssey-device-deploy.sh
-echo 'rm -rf /etc/profile.d' >> odyssey-device-deploy.sh
-echo 'rm -rf /etc/alternatives' >> odyssey-device-deploy.sh
-echo 'rm -rf /etc/apt' >> odyssey-device-deploy.sh
-echo 'rm -rf /etc/ssl' >> odyssey-device-deploy.sh
-echo 'rm -rf /etc/ssh' >> odyssey-device-deploy.sh
-echo 'rm -rf /etc/dpkg' >> odyssey-device-deploy.sh
-echo 'rm -rf /Library/dpkg' >> odyssey-device-deploy.sh
-echo 'rm -rf /var/cache' >> odyssey-device-deploy.sh
-echo 'rm -rf /var/lib' >> odyssey-device-deploy.sh
-echo 'tar --preserve-permissions -xkf bootstrap_${CFVER}.tar -C /' >> odyssey-device-deploy.sh
-printf %s 'SNAPSHOT=$(snappy -s | ' >> odyssey-device-deploy.sh
-printf %s "cut -d ' ' -f 3 | tr -d '\n')" >> odyssey-device-deploy.sh
-echo '' >> odyssey-device-deploy.sh
-echo 'snappy -f / -r $SNAPSHOT -t orig-fs' >> odyssey-device-deploy.sh
-echo 'fi' >> odyssey-device-deploy.sh
-echo '/usr/libexec/firmware' >> odyssey-device-deploy.sh
-echo 'mkdir -p /var/mobile/Library/Application Support/xyz.willy.Zebra/' >> odyssey-device-deploy.sh
-echo 'echo "deb https://jostynp100.github.io/Checkcursus/ ./" > /var/mobile/Library/Application Support/xyz.willy.Zebra/sources.list' >> odyssey-device-deploy.sh
-echo 'echo "" >> /var/mobile/Library/Application Support/xyz.willy.Zebra/sources.list' >> odyssey-device-deploy.sh
-echo 'mkdir -p /etc/apt/preferences.d/' >> odyssey-device-deploy.sh
-echo 'echo "Package: *" > /etc/apt/preferences.d/odyssey' >> odyssey-device-deploy.sh
-echo 'echo "Pin: release n=odyssey-ios" >> /etc/apt/preferences.d/odyssey' >> odyssey-device-deploy.sh
-echo 'echo "Pin-Priority: 1001" >> /etc/apt/preferences.d/odyssey' >> odyssey-device-deploy.sh
-echo 'echo "" >> /etc/apt/preferences.d/odyssey' >> odyssey-device-deploy.sh
-echo 'if [[ $VER = 12.1* ]] || [[ $VER = 12.0* ]]; then' >> odyssey-device-deploy.sh
-echo 'PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/bin/X11:/usr/games dpkg -i org.swift.libswift_5.0-electra2_iphoneos-arm.deb' >> odyssey-device-deploy.sh
-echo 'fi' >> odyssey-device-deploy.sh
-echo 'PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/bin/X11:/usr/games dpkg -i xyz.willy.zebra_1.1.13_iphoneos-arm.deb' >> odyssey-device-deploy.sh
-echo 'uicache -p /Applications/Zebra.app' >> odyssey-device-deploy.sh
-echo 'echo -n "" > /var/lib/dpkg/available' >> odyssey-device-deploy.sh
-echo '/Library/dpkg/info/profile.d.postinst' >> odyssey-device-deploy.sh
-echo 'touch /.mount_rw' >> odyssey-device-deploy.sh
-echo 'touch /.installed_odyssey' >> odyssey-device-deploy.sh
-echo 'rm bootstrap*.tar*' >> odyssey-device-deploy.sh
-echo 'rm migration' >> odyssey-device-deploy.sh
-echo 'rm xyz.willy.zebra_1.1.13_iphoneos-arm.deb' >> odyssey-device-deploy.sh
-echo 'rm org.swift.libswift_5.0-electra2_iphoneos-arm.deb' >> odyssey-device-deploy.sh
-echo 'rm odyssey-device-deploy.sh' >> odyssey-device-deploy.sh
+echo 'if [[ -f "/.bootstrapped" ]]; then' >> checkcursus-device-deploy.sh
+echo 'mkdir -p /odyssey && mv migration /odyssey' >> checkcursus-device-deploy.sh
+echo 'chmod 0755 /odyssey/migration' >> checkcursus-device-deploy.sh
+echo '/odyssey/migration' >> checkcursus-device-deploy.sh
+echo 'rm -rf /odyssey' >> checkcursus-device-deploy.sh
+echo 'else' >> checkcursus-device-deploy.sh
+echo 'VER=$(/binpack/usr/bin/plutil -key ProductVersion /System/Library/CoreServices/SystemVersion.plist)' >> checkcursus-device-deploy.sh
+echo 'if [[ "${VER%.*}" -ge 12 ]] && [[ "${VER%.*}" -lt 13 ]]; then' >> checkcursus-device-deploy.sh
+echo 'CFVER=1500' >> checkcursus-device-deploy.sh
+echo 'elif [[ "${VER%.*}" -ge 13 ]]; then' >> checkcursus-device-deploy.sh
+echo 'CFVER=1600' >> checkcursus-device-deploy.sh
+echo 'elif [[ "${VER%.*}" -ge 14 ]]; then' >> checkcursus-device-deploy.sh
+echo 'CFVER=1700' >> checkcursus-device-deploy.sh
+echo 'else' >> checkcursus-device-deploy.sh
+echo 'echo "${VER} not compatible."' >> checkcursus-device-deploy.sh
+echo 'exit 1' >> checkcursus-device-deploy.sh
+echo 'fi' >> checkcursus-device-deploy.sh
+echo 'gzip -d bootstrap_${CFVER}.tar.gz' >> checkcursus-device-deploy.sh
+echo 'mount -uw -o union /dev/disk0s1s1' >> checkcursus-device-deploy.sh
+echo 'rm -rf /etc/profile' >> checkcursus-device-deploy.sh
+echo 'rm -rf /etc/profile.d' >> checkcursus-device-deploy.sh
+echo 'rm -rf /etc/alternatives' >> checkcursus-device-deploy.sh
+echo 'rm -rf /etc/apt' >> checkcursus-device-deploy.sh
+echo 'rm -rf /etc/ssl' >> checkcursus-device-deploy.sh
+echo 'rm -rf /etc/ssh' >> checkcursus-device-deploy.sh
+echo 'rm -rf /etc/dpkg' >> checkcursus-device-deploy.sh
+echo 'rm -rf /Library/dpkg' >> checkcursus-device-deploy.sh
+echo 'rm -rf /var/cache' >> checkcursus-device-deploy.sh
+echo 'rm -rf /var/lib' >> checkcursus-device-deploy.sh
+echo 'tar --preserve-permissions -xkf bootstrap_${CFVER}.tar -C /' >> checkcursus-device-deploy.sh
+printf %s 'SNAPSHOT=$(snappy -s | ' >> checkcursus-device-deploy.sh
+printf %s "cut -d ' ' -f 3 | tr -d '\n')" >> checkcursus-device-deploy.sh
+echo '' >> checkcursus-device-deploy.sh
+echo 'snappy -f / -r $SNAPSHOT -t orig-fs' >> checkcursus-device-deploy.sh
+echo 'fi' >> checkcursus-device-deploy.sh
+echo '/usr/libexec/firmware' >> checkcursus-device-deploy.sh
+echo 'mkdir -p /etc/apt/preferences.d/' >> checkcursus-device-deploy.sh
+echo 'echo "Package: *" > /etc/apt/preferences.d/checkcursus' >> checkcursus-device-deploy.sh
+echo 'echo "Pin: release n=checkcursus-ios" >> /etc/apt/preferences.d/checkcursus' >> checkcursus-device-deploy.sh
+echo 'echo "Pin-Priority: 1001" >> /etc/apt/preferences.d/checkcursus' >> checkcursus-device-deploy.sh
+echo 'echo "" >> /etc/apt/preferences.d/checkcursus' >> checkcursus-device-deploy.sh
+echo 'if [[ $VER = 12.1* ]] || [[ $VER = 12.0* ]]; then' >> checkcursus-device-deploy.sh
+echo 'PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/bin/X11:/usr/games dpkg -i org.swift.libswift_5.0-electra2_iphoneos-arm.deb' >> checkcursus-device-deploy.sh
+echo 'fi' >> checkcursus-device-deploy.sh
+echo 'PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/bin/X11:/usr/games dpkg -i xyz.willy.zebra_1.1.13_iphoneos-arm.deb' >> checkcursus-device-deploy.sh
+echo 'uicache -p /Applications/Zebra.app' >> checkcursus-device-deploy.sh
+echo 'echo -n "" > /var/lib/dpkg/available' >> checkcursus-device-deploy.sh
+echo '/Library/dpkg/info/profile.d.postinst' >> checkcursus-device-deploy.sh
+echo 'touch /.mount_rw' >> checkcursus-device-deploy.sh
+echo 'touch /.installed_checkcursus' >> checkcursus-device-deploy.sh
+echo 'rm bootstrap*.tar*' >> checkcursus-device-deploy.sh
+echo 'rm migration' >> checkcursus-device-deploy.sh
+echo 'rm xyz.willy.zebra_1.1.13_iphoneos-arm.deb' >> checkcursus-device-deploy.sh
+echo 'rm org.swift.libswift_5.0-electra2_iphoneos-arm.deb' >> checkcursus-device-deploy.sh
+echo 'rm checkcursus-device-deploy.sh' >> checkcursus-device-deploy.sh
 
 echo "Downloading Resources..."
-curl -L -O https://github.com/JostynP100/Zebra-Procursus/raw/master/bootstrap_1500.tar.gz -O https://github.com/JostynP100/Zebra-Procursus/raw/master/bootstrap_1600.tar.gz -O https://github.com/JostynP100/Zebra-Procursus/raw/master/bootstrap_1700.tar.gz -O https://github.com/JostynP100/Zebra-Procursus/raw/master/migration -O https://github.com/JostynP100/Zebra-Procursus/raw/master/xyz.willy.zebra_1.1.13_iphoneos-arm.deb -O https://github.com/coolstar/odyssey-bootstrap/raw/master/org.swift.libswift_5.0-electra2_iphoneos-arm.deb
+curl -L -O https://github.com/JostynP100/Checkcursus/raw/master/bootstrap_1500.tar.gz -O https://github.com/JostynP100/Checkcursus/raw/master/bootstrap_1600.tar.gz -O https://github.com/JostynP100/Checkcursus/raw/master/bootstrap_1700.tar.gz -O https://github.com/JostynP100/Checkcursus/raw/master/migration -O https://github.com/JostynP100/Checkcursus/raw/master/xyz.willy.zebra_1.1.13_iphoneos-arm.deb -O https://github.com/JostynP100/Checkcursus/raw/master/org.swift.libswift_5.0-electra2_iphoneos-arm.deb
 clear
 if [[ ! "${ARM}" = yes ]]; then
 	echo "Copying Files to your device"
@@ -111,10 +108,10 @@ if [[ ! "${ARM}" = yes ]]; then
 fi
 echo "Installing Procursus bootstrap and Zebra on your device"
 if [[ "${ARM}" = yes ]]; then
-	zsh ./odyssey-device-deploy.sh
+	zsh ./checkcursus-device-deploy.sh
 else
 	echo "Default password is: alpine"
-	ssh -p4444 -o "StrictHostKeyChecking no" -o "UserKnownHostsFile=/dev/null" root@127.0.0.1 "zsh /var/root/odyssey-device-deploy.sh"
+	ssh -p4444 -o "StrictHostKeyChecking no" -o "UserKnownHostsFile=/dev/null" root@127.0.0.1 "zsh /var/root/checkcursus-device-deploy.sh"
 	echo "All Done!"
 	killall iproxy
 fi

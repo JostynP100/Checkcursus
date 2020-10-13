@@ -42,10 +42,10 @@ if [[ ! "${ARM}" = yes ]]; then
 	echo 'cd /var/root' >> checkcursus-device-deploy.sh
 fi
 echo 'if [[ -f "/.bootstrapped" ]]; then' >> checkcursus-device-deploy.sh
-echo 'mkdir -p /odyssey && mv migration /odyssey' >> checkcursus-device-deploy.sh
-echo 'chmod 0755 /odyssey/migration' >> checkcursus-device-deploy.sh
-echo '/odyssey/migration' >> checkcursus-device-deploy.sh
-echo 'rm -rf /odyssey' >> checkcursus-device-deploy.sh
+echo 'mkdir -p /checkcursus && mv migration /checkcursus' >> checkcursus-device-deploy.sh
+echo 'chmod 0755 /checkcursus/migration' >> checkcursus-device-deploy.sh
+echo '/checkcursus/migration' >> checkcursus-device-deploy.sh
+echo 'rm -rf /checkcursus' >> checkcursus-device-deploy.sh
 echo 'else' >> checkcursus-device-deploy.sh
 echo 'VER=$(/binpack/usr/bin/plutil -key ProductVersion /System/Library/CoreServices/SystemVersion.plist)' >> checkcursus-device-deploy.sh
 echo 'if [[ "${VER%.*}" -ge 12 ]] && [[ "${VER%.*}" -lt 13 ]]; then' >> checkcursus-device-deploy.sh

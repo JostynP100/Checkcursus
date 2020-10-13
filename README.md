@@ -7,7 +7,7 @@ Usbmuxd = [brew install usbmuxd] -> Mac
 
 Usbmuxd = [sudo apt-get install usbmuxd] -> Linux
 
-Script Zebra = [/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/JostynP100/Checkcursus/master/zebra-checkcursus-procursus-deploy-linux-macos.sh)"] -> Mac/Linux
+Script Zebra = [/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/JostynP100/Checkcursus/master/zebra-checkcursus-deploy-linux-macos.sh)"] -> Mac/Linux
 
-Script Sileo = [/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/JostynP100/Checkcursus/master/sileo-checkcursus-procursus-deploy-linux-macos.sh)"] -> Mac/Linux
+Script Sileo = [/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/JostynP100/Checkcursus/master/sileo-checkcursus-deploy-linux-macos.sh)"] -> Mac/Linux
 

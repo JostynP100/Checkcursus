@@ -11,7 +11,7 @@ echo "Checkcursus deployment script"
 echo "(C) 2020, JostynP100"
 
 echo ""
-echo "Before you begin: This script will install Procursus with Zebra on Checkra1n."
+echo "Before you begin: This script will install Procursus with Sileo on Checkra1n."
 echo "If you're already jailbroken, you can run this script on the checkra1n device."
 echo "If you'd rather start clean, please Reset System via the Loader app first."
 read -p "Press enter to continue"

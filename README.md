@@ -1,5 +1,5 @@
 # Information
-Script to install Zebra/Sileo and Substrate together with the Procursus bootstrap
+Script to install Zebra and Substrate together with the Procursus bootstrap
 # Installation Mac/Linux
 Users Mac = [/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)”]
 

@@ -1,5 +1,5 @@
 # Information
-Script para instalar Zebra junto al bootstrap de Procursus
+Script to install Zebra/Sileo and Substrate together with the Procursus bootstrap
 # Installation Mac/Linux
 Users Mac = [/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)”]
 
@@ -7,5 +7,7 @@ Usbmuxd = [brew install usbmuxd] -> Mac
 
 Usbmuxd = [sudo apt-get install usbmuxd] -> Linux
 
-Script = [/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/JostynP100/Checkcursus/master/checkcursus-procursus-deploy-linux-macos.sh)"] -> Mac/Linux
+Script Zebra = [/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/JostynP100/Checkcursus/master/zebra-checkcursus-procursus-deploy-linux-macos.sh)"] -> Mac/Linux
+
+Script Sileo = [/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/JostynP100/Checkcursus/master/sileo-checkcursus-procursus-deploy-linux-macos.sh)"] -> Mac/Linux
 

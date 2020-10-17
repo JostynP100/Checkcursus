@@ -60,7 +60,7 @@ Section: System
 dev: rpetrich
 Tag: purpose::extension, role::developer
 Version: 1.0.10~beta1
-Installed-Size: 596
+Size: 596
 Filename: debs/com.rpetrich.rocketbootstrap_1.0.10_beta1_iphoneos-arm.deb
 
 Package: org.coolstar.sileo

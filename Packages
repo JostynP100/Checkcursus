@@ -63,20 +63,21 @@ Version: 1.0.10~beta1
 Size: 596
 Filename: debs/com.rpetrich.rocketbootstrap_1.0.10_beta1_iphoneos-arm.deb
 
-Package: org.coolstar.sileo
-Priority: required
+Package: cydia
+Priority: important
 Section: Packaging
-Maintainer: CoolStar <coolstarorganization@gmail.com>
+Maintainer: Jay Freeman (saurik) <saurik@saurik.com>
 Architecture: iphoneos-arm
-Icon: https://getsileo.app/img/icon.png
-SileoDepiction: https://featuredpage.getsileo.app/depiction.json
-Depends: apt (>= 2.1.10-1), coreutils (>=8.32-4), dpkg (>= 1.19.2-4), procursus-keyring, zsh, cy+cpu.arm64, firmware(>=12.2) | org.swift.libswift (>=5.0)
-Conflicts: cydia-gui (<<99.0)
-Pre-Depends: debianutils, dpkg (>= 1.18)
-Description: A proper APT client for iOS 11 and higher. (View this package in Sileo to see the full depiction)
-Name: Sileo
-Author: Sileo Team <getsileoapp@gmail.com>
-Tag: cydia::essential
-Version: 2.0.0b6
-Installed-Size: 12652
-Filename: debs/org.coolstar.sileo_2.0.0b6_iphoneos-arm.deb
+Version: 1.1.33
+Replaces: bigboss, bigbossbetarepo, com.sosiphone.addcydia, cydia-sources, cydia-lproj, ispazio.net, modmyifone, saurik, ste, yellowsn0w.com, zodttd
+Depends: darwintools, debianutils, dpkg (>= 1.19.1), sed, shell-cmds, system-cmds, uikittools (>= 1.1.14), xz-utils, zstd
+Conflicts: bigboss, bigbossbetarepo, com.sosiphone.addcydia, cydia-sources, cydia-lproj, ispazio.net, modmyifone, ste, yellowsn0w.com, zodttd
+Pre-Depends: debianutils, dpkg (>= 1.16.1), firmware (>=12.0)
+Provides: bigbossbetarepo, cydia-sources, cydia-lproj
+Description: graphical iPhone front-end for APT
+Name: Cydia Installer
+Author: Jay Freeman (saurik) <saurik@saurik.com>
+Depiction: http://cydia.saurik.com/info/cydia/
+Icon: file:///Applications/Cydia.app/Icon-60.png
+Tag: purpose::uikit, role::enduser
+Installed-Size: 6848

@@ -81,3 +81,19 @@ Depiction: http://cydia.saurik.com/info/cydia/
 Icon: file:///Applications/Cydia.app/Icon-60.png
 Tag: purpose::uikit, role::enduser
 Installed-Size: 6848
+Filename: debs/cydia_1.1.33_iphoneos-arm.deb
+
+Architecture: iphoneos-arm
+Depends: firmware (>= 11.0)
+Author: AppTapp <support@apptapp.me>
+Depiction: https://apptapp.me/repo/installer.html
+Description: The fastest package manager built specifically for iOS!
+Icon: https://synnygr.dev/AppTapp/installer_icon.png
+Maintainer: AppTapp <support@apptapp.me>
+Name: Installer
+Package: me.apptapp.installer
+Section: Packaging
+SileoDepiction: https://apptapp.me/repo/installer.json
+Version: 5.0.3-3
+Filename: debs/Installer_5033.deb
+

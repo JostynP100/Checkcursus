@@ -7,7 +7,7 @@ Depends: mobilesubstrate (>= 0.9.3367+38)
 Architecture: iphoneos-arm
 Maintainer: Jay Freeman (saurik) <saurik@saurik.com>
 Priority: optional
-Section: System
+Section: Substrate
 Conflicts: safe-mode-fixer-ios7
 Replaces: safe-mode-fixer-ios7
 Version: 0.9.6004
@@ -28,7 +28,7 @@ Priority: optional
 Version: 0.9.7111
 Description: powerful code insertion platform
 Maintainer: Jay Freeman (saurik) <saurik@saurik.com>
-Section: System
+Section: Substrate
 Filename: debs/mobilesubstrate_0.9.7111_iphoneos-arm.deb
 
 Package: preferenceloader
